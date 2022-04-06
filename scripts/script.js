@@ -78,7 +78,7 @@ letters.forEach((letter, i) => {
     var alphaLetters = /[a-zA-Z]/;
     if (letter.value !== "") {
       if (x.match(alphaLetters)) {
-        letter.value = event.target.value;
+        letter.value = event.target.value.toLowerCase();
         nextLttr && nextLttr.focus();
       } else {
         letter.value = "";
