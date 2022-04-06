@@ -74,13 +74,22 @@ letters.forEach((letter, i) => {
     const x = event.data;
     const i = event.target.id[8] - 1;
     const nextLttr = letters[i + 1];
-    var alphaLetters = /[a-zA-Z]/;
+    const alphaLetters = /[a-zA-Z]/;
+    const a = letter.value;
+    const b = letter.value.length;
     if (letter.value !== "") {
-      if (x.match(alphaLetters)) {
-        // letter.value = event.target.value.toLowerCase();
-        nextLttr && nextLttr.focus();
-      } else {
-        letter.value = "";
+      if (b === 1) {
+        if (x.match(alphaLetters)) {
+          nextLttr && nextLttr.focus();
+        } else {
+          letter.value = "";
+        }
+      } else if (b === 2) {
+        if (a[1].match(alphaLetters)) {
+          letter.value = a[1];
+        } else {
+          letter.value = a[0];
+        }
       }
     }
   });
@@ -198,7 +207,6 @@ const lowerAndCheck = () => {
 
 const checkWord = function () {
   letters.forEach(function (letter, i) {
-    notes1.textContent += " " + letter.value;
     const backgroundColor = letter.style.backgroundColor;
     if (backgroundColor === "green") {
       enteredWord = replaceCharAt(i, letter, enteredWord);
