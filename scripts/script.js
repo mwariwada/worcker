@@ -87,6 +87,7 @@ letters.forEach((letter, i) => {
       } else if (b === 2) {
         if (a[1].match(alphaLetters)) {
           letter.value = a[1];
+          nextLttr && nextLttr.focus();
         } else {
           letter.value = a[0];
         }
