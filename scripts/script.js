@@ -74,6 +74,7 @@ function letterFieldPressed(e) {
   } else if (!(y >= 65 && y <= 90) || !(y >= 97 && y <= 122)) {
     letters[i].value = "";
   }
+  e.target.value = e.target.value.replace(/[^\d]/g, "");
   return false;
 }
 
