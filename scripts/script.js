@@ -59,23 +59,24 @@ const changeBackgroundColor = () => {
   }
 };
 
-letters.forEach((letter, i) => {
-  letter.addEventListener("keydown", function (event) {
-    const x = event.key;
-    const y = event.keyCode;
-    const prevLttr = letters[i - 1];
-    const nextLttr = letters[i + 1];
-    if (x === "Backspace") {
-      prevLttr && prevLttr.focus();
-    } else if (x === "ArrowLeft") {
-      prevLttr && prevLttr.focus();
-    } else if ((y >= 65 && y <= 90) || (y >= 97 && y <= 122)) {
-      nextLttr && nextLttr.focus();
-    } else if (!(y >= 65 && y <= 90) || !(y >= 97 && y <= 122)) {
-      letter.value = "";
-    }
-  });
+function letterFieldPressed(e) {
+  const i = e.path[0].id[8] - 1;
+  const x = e.key;
+  const y = e.keyCode;
+  const prevLttr = letters[i - 1];
+  const nextLttr = letters[i + 1];
+  if (x === "Backspace") {
+    prevLttr && prevLttr.focus();
+  } else if (x === "ArrowLeft") {
+    prevLttr && prevLttr.focus();
+  } else if ((y >= 65 && y <= 90) || (y >= 97 && y <= 122)) {
+    nextLttr && nextLttr.focus();
+  } else if (!(y >= 65 && y <= 90) || !(y >= 97 && y <= 122)) {
+    letters[i].value = "";
+  }
+}
 
+letters.forEach((letter, i) => {
   letter.addEventListener("dblclick", changeBackgroundColor);
 });
 
