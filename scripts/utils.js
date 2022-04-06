@@ -1,4 +1,4 @@
-window.globs = [
+allFiveLetterWords = [
   "which",
   "there",
   "their",

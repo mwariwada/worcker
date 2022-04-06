@@ -1,6 +1,6 @@
 "use strict";
 
-let allWords = [...window.globs];
+let allWords = [...allFiveLetterWords];
 
 const nmbrOfLttrs = 5;
 
