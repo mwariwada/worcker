@@ -62,10 +62,9 @@ const changeBackgroundColor = () => {
 function letterFieldPressed(e) {
   const i = e.path[0].id[8] - 1;
   const x = e.key;
-  const y = e.keyCode;
   const prevLttr = letters[i - 1];
-  const nextLttr = letters[i + 1];
-  if (x === "Backspace") {
+  if (x === "Backspace" && letters[i].value === "") {
+    //so backspace doesn't work on an empty field
     prevLttr && prevLttr.focus();
   }
 }
@@ -78,7 +77,7 @@ letters.forEach((letter, i) => {
     var alphaLetters = /[a-zA-Z]/;
     if (letter.value !== "") {
       if (x.match(alphaLetters)) {
-        letter.value = event.target.value.toLowerCase();
+        // letter.value = event.target.value.toLowerCase();
         nextLttr && nextLttr.focus();
       } else {
         letter.value = "";
@@ -186,6 +185,17 @@ const searchForWords = function () {
     .replaceAll(",", "\n");
 };
 
+const setLettersToLowerCase = () => {
+  letters.forEach((letter) => {
+    letter.value = letter.value.toLowerCase();
+  });
+};
+
+const lowerAndCheck = () => {
+  setLettersToLowerCase();
+  checkWord();
+};
+
 const checkWord = function () {
   letters.forEach(function (letter, i) {
     notes1.textContent += " " + letter.value;
@@ -204,7 +214,7 @@ const checkWord = function () {
   searchForWords();
 };
 
-chckBttn.addEventListener("click", checkWord);
+chckBttn.addEventListener("click", lowerAndCheck);
 
 const playAgain = () => {
   clearAll();
