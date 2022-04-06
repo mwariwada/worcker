@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript">
+      window.glob = "global variable";
+    </script>
+    <script src="/scripts/utils.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Open Sans"
+      rel="stylesheet"
+    />
+    <title>Worcker!</title>
+  </head>
+  <body>
+    <div class="split left">
+      <div class="centered">
+        <h1 id="left-heading">What is the word that you tried?</h1>
+        <div class="input-fields">
+          <input
+            class="input-field"
+            type="text"
+            id="letter--1"
+            size="1"
+            maxlength="1"
+            pattern="[A-Za-z]"
+          />
+          <input
+            class="input-field"
+            type="text"
+            id="letter--2"
+            size="1"
+            maxlength="1"
+          />
+          <input
+            class="input-field"
+            type="text"
+            id="letter--3"
+            size="1"
+            maxlength="1"
+          />
+          <input
+            class="input-field"
+            type="text"
+            id="letter--4"
+            size="1"
+            maxlength="1"
+          />
+          <input
+            class="input-field"
+            type="text"
+            id="letter--5"
+            size="1"
+            maxlength="1"
+          />
+        </div>
+        <div id="letters-buttons">
+          <button class="btn check" id="goButton">Show words!</button>
+          <button class="btn secondary-button" id="clearTextButton">
+            Clear text
+          </button>
+        </div>
+        <div class="notes">
+          <strong
+            ><span id="notes1"
+              >Double click a letter to change it to orange</span
+            >
+            <br />
+            <span id="notes2">Double click it again to turn it green</span>
+          </strong>
+        </div>
+        <div class="game-buttons">
+          <button class="btn secondary-button" id="againButton">
+            <strong>Try again</strong>
+          </button>
+        </div>
+      </div>
+
+      <div id="credits">
+        App developed by Simbarashe Banda
+        <a href="https://www.linkedin.com/in/simbanda/"
+          ><img class="credits-image" src="/resources/linkedin-icon.png"
+        /></a>
+        <a href="https://www.instagram.com/mwariwada/"
+          ><img class="credits-image" src="/resources/Instagram-icon-PNG.png"
+        /></a>
+        <a href="https://github.com/mwariwada"
+          ><img class="credits-image" src="/resources/Github-icon.webp"
+        /></a>
+      </div>
+    </div>
+
+    <div class="split right">
+      <div class="centered">
+        <h1 id="right-heading">Pick a word from the list below 👇</h1>
+        <div class="content-box">
+          <div id="wordsDiv"></div>
+        </div>
+        <div class="wordsDiv-notes">Slide this way ➡️ for more words</div>
+      </div>
+      <div id="credits-2">
+        <a href="https://www.linkedin.com/in/simbanda/"
+          ><img class="credits-image" src="/resources/linkedin-icon.png"
+        /></a>
+        <a href="https://www.instagram.com/mwariwada/"
+          ><img class="credits-image" src="/resources/Instagram-icon-PNG.png"
+        /></a>
+        <a href="https://github.com/mwariwada"
+          ><img class="credits-image" src="/resources/Github-icon.webp"
+        /></a>
+      </div>
+    </div>
+
+    <script src="/scripts/script.js"></script>
+  </body>
+</html>
