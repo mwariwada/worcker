@@ -10,3 +10,6 @@ New versions and improvements will uploaded ⬆️ to this repository. Users m
 The code is not perfect! Feel free to send me suggestions and improvements!
 
 You can send me an email on: mwariwada@gmail.com if you have questions or would like to donate 😬.
+
+Known bugs:
++ You can enter numbers and other non-alphabetic characters as the second character in an input field. 
