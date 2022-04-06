@@ -78,6 +78,7 @@ letters.forEach((letter, i) => {
     var alphaLetters = /^[A-Za-z]+$/;
     if (letter.value !== "") {
       if (x.match(alphaLetters)) {
+        letter.value = event.target.value;
         nextLttr && nextLttr.focus();
       } else {
         letter.value = "";
