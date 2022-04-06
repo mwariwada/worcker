@@ -67,18 +67,46 @@ function letterFieldPressed(e) {
   const nextLttr = letters[i + 1];
   if (x === "Backspace") {
     prevLttr && prevLttr.focus();
-  } else if (x === "ArrowLeft") {
-    prevLttr && prevLttr.focus();
-  } else if ((y >= 65 && y <= 90) || (y >= 97 && y <= 122)) {
-    nextLttr && nextLttr.focus();
-  } else if (!(y >= 65 && y <= 90) || !(y >= 97 && y <= 122)) {
-    letters[i].value = "";
   }
-  e.target.value = e.target.value.replace(/[^\d]/g, "");
-  return false;
+  // else if (x === "ArrowLeft") {
+  //   prevLttr && prevLttr.focus();
+  // } else if ((y >= 65 && y <= 90) || (y >= 97 && y <= 122)) {
+  //   nextLttr && nextLttr.focus();
+  // } else if (!(y >= 65 && y <= 90) || !(y >= 97 && y <= 122)) {
+  //   letters[i].value = "";
+  // }
+  // e.target.value = e.target.value.replace(/[^\d]/g, "");
+  // return false;
 }
 
 letters.forEach((letter, i) => {
+  letter.addEventListener("keydown", function (event) {
+    const x = event.data;
+    const prevLttr = letters[i - 1];
+    const nextLttr = letters[i + 1];
+    if (x === "Backspace") {
+      console.log(x);
+      prevLttr && prevLttr.focus();
+    } else if (x === "ArrowLeft") {
+      prevLttr && prevLttr.focus();
+    }
+  });
+
+  letter.addEventListener("input", function (event) {
+    const x = event.data;
+    const i = event.target.id[8] - 1;
+    const prevLttr = letters[i - 1];
+    const nextLttr = letters[i + 1];
+    var alphaLetters = /^[A-Za-z]+$/;
+    if (letter.value !== "") {
+      if (x.match(alphaLetters)) {
+        nextLttr && nextLttr.focus();
+      } else {
+        letter.value = "";
+      }
+    }
+  });
+
   letter.addEventListener("dblclick", changeBackgroundColor);
 });
 
