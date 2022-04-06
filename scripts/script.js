@@ -75,7 +75,7 @@ letters.forEach((letter, i) => {
     const x = event.data;
     const i = event.target.id[8] - 1;
     const nextLttr = letters[i + 1];
-    var alphaLetters = /^[A-Za-z]+$/;
+    var alphaLetters = /[a-zA-Z]/;
     if (letter.value !== "") {
       if (x.match(alphaLetters)) {
         letter.value = event.target.value;
@@ -188,6 +188,7 @@ const searchForWords = function () {
 
 const checkWord = function () {
   letters.forEach(function (letter, i) {
+    notes1.textContent += " " + letter.value;
     const backgroundColor = letter.style.backgroundColor;
     if (backgroundColor === "green") {
       enteredWord = replaceCharAt(i, letter, enteredWord);

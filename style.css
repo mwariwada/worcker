@@ -202,6 +202,11 @@
   #credits-2 {
     display: none;
   }
+
+  .btn:hover {
+    background-color: white;
+    color: black;
+  }
 }
 
 .btn {
@@ -224,11 +229,6 @@ input {
   margin-right: 0.25vmax;
 }
 
-.btn:hover {
-  background-color: white;
-  color: black;
-}
-
 .secondary-button {
   background-color: gray;
 }
@@ -246,17 +246,3 @@ input {
   text-overflow: ellipsis;
   margin-bottom: 2vh;
 }
-
-/* .middle {
-  text-align: center;
-  color: white;
-} 
-
-.game-buttons {
-  padding-top: 5%;
-} 
-
-.right-text {
-  margin-top: -145px;
-}
-*/
