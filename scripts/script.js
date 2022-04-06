@@ -60,7 +60,7 @@ const changeBackgroundColor = () => {
 };
 
 letters.forEach((letter, i) => {
-  letter.addEventListener("keyup", function (event) {
+  letter.addEventListener("keydown", function (event) {
     const x = event.key;
     const y = event.keyCode;
     const prevLttr = letters[i - 1];
